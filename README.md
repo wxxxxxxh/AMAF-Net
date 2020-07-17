@@ -1,4 +1,4 @@
-# Adaptively Multi-gradients Auxiliary Feature Learning for Efficient Super-resolution
+# [AIM2020] Adaptively Multi-gradients Auxiliary Feature Learning for Efficient Super-resolution
 
 ## Dependecies
 - python = 3.6
@@ -52,4 +52,4 @@ python test.py --config ./yaml/test.yaml
 - Parameters used in our code can be seen in `./yaml/test.yaml`
 #### Input and output
 - If you use `cv2` to load an image, you need to transfer it to (R,G,B) format.
-- You are NOT asked to normalize the input/output image to 0~1 or -1~1, keep them be 0~255.
+- You are NOT asked to normalize the input/output image to 0\~1 or -1\~1, keep them be 0\~255.
