@@ -1,0 +1,56 @@
+DESCRIPTION: '[AIM 2020] AMAF-Net Test yaml'
+
+n_GPUs: 1
+cudnn_benchmark: True
+
+dataset:
+      dir_root: '../../DATASET' #Put datas to here.
+      dir_hr: 'DIV2K_train_HR'
+      dir_lr: 'DIV2K_train_LR_bicubic/X4'
+      phase: 'train' #no need to change
+      batch_size: 1
+      num_workers: 1
+      scale: 4
+      n_colors: 3
+
+model:
+      zoo: 'Model_zoo'
+      name: 'AMAF'
+
+
+optimizer:
+    type: 'ADAM'  #
+    Adam:
+        beta1: 0.9
+        beta2: 0.999
+        epsilon: 0.00000001
+    SGD:
+        momentum: 0.9
+    RMSprop:
+        epsilon: 0.00000001
+    lr: 0.001
+    weight_decay: 0
+  
+schedular:
+          decay_type: 'restart'
+          lr_decay: 200
+          gamma: 0.5
+          period: 1000
+training:
+    eval_when_train: True
+    epochs: 300
+    rgb_range: 255
+    n_colors: 3
+    n_feats: 24
+    block_feats: 128
+    n_layers: 8
+    scale: 4
+    use_hsigmoid: False
+    use_ca: False
+    res_scale: 1
+
+testing:
+        pretrained_model_path: './ckp/Epoch_392.pt'  #!!Select pretrained model!!
+        result_dir: './result'  #!!You can check results from here!!
+
+vtype: 'test'  #val or test
