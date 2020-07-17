@@ -4,7 +4,7 @@ n_GPUs: 1
 cudnn_benchmark: True
 
 dataset:
-      dir_root: '../../DATASET' #Put datas to here.
+      dir_root: './Datasets' #Put datas to here.
       dir_hr: 'DIV2K_train_HR'
       dir_lr: 'DIV2K_train_LR_bicubic/X4'
       phase: 'train' #no need to change
