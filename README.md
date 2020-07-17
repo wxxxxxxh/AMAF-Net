@@ -13,7 +13,7 @@
 - pillow = 6.2.2
 - scipy = 1.2.1
 
-If you use Anaconda, you can run these commands to build a env that can run our code correctly:
+**[IMPORTANT]** If you use Anaconda, you can run these commands to build a env that can run our code correctly:
 ```bash
 #First step: build a env and enter it
 conda create -n AMAF python=3.6
